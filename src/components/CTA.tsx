@@ -41,20 +41,14 @@ const CTA = () => {
             </div>
           </div>
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mb-8"
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-white font-semibold py-6 px-8 rounded-full transition-all duration-300 mb-8"
+            onClick={() => window.open(whatsappUrl, "_blank")}
           >
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary-hover text-white font-semibold py-6 px-8 rounded-full transition-all duration-300"
-              onClick={() => window.open(whatsappUrl, "_blank")}
-            >
-              <MessageSquare className="mr-2" />
-              Agende sua Consulta Gratuita
-            </Button>
-          </motion.div>
+            <MessageSquare className="mr-2" />
+            Agende sua Consulta Gratuita
+          </Button>
 
           <div className="space-y-2 text-center">
             <p className="text-sm text-neutral-600">

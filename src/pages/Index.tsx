@@ -21,26 +21,28 @@ const Index = () => {
           transition={{ duration: 0.5 }}
           className="flex-1"
         >
-          <Suspense fallback={<div>Carregando...</div>}>
+          <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          </div>}>
             <section id="home" className="scroll-mt-20">
               <Hero />
             </section>
-            <section id="benefits" className="scroll-mt-20 bg-gradient-to-b from-primary-50/90 to-secondary/60">
+            <section id="benefits" className="scroll-mt-20">
               <Benefits />
             </section>
-            <section id="services" className="scroll-mt-20 bg-gradient-to-b from-secondary/60 to-primary-100/50">
+            <section id="services" className="scroll-mt-20">
               <Pricing />
             </section>
-            <section id="testimonials" className="scroll-mt-20 bg-gradient-to-b from-primary-100/50 to-secondary/40">
+            <section id="testimonials" className="scroll-mt-20">
               <Testimonials />
             </section>
-            <section id="brands" className="scroll-mt-20 bg-gradient-to-b from-secondary/40 to-primary-50/70">
+            <section id="brands" className="scroll-mt-20">
               <Brands />
             </section>
-            <section id="faq" className="scroll-mt-20 bg-gradient-to-b from-primary-50/70 to-secondary/50">
+            <section id="faq" className="scroll-mt-20">
               <FAQ />
             </section>
-            <section className="bg-accent/70 text-white">
+            <section>
               <CTA />
             </section>
           </Suspense>

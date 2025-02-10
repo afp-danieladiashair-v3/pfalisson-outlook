@@ -5,30 +5,44 @@ const brands = [
   {
     name: "L'Oréal",
     logo: "/images/brands/loreal.png",
+    width: 120,
+    height: 60,
   },
   {
     name: "Sebastian",
     logo: "/images/brands/sebastian.png",
+    width: 120,
+    height: 60,
   },
   {
     name: "Wella",
     logo: "/images/brands/wella.png",
+    width: 120,
+    height: 60,
   },
   {
     name: "Igora",
     logo: "/images/brands/igora.png",
+    width: 120,
+    height: 60,
   },
   {
     name: "Burana",
     logo: "/images/brands/burana.png",
+    width: 120,
+    height: 60,
   },
   {
     name: "Zartte",
     logo: "/images/brands/zartte.png",
+    width: 120,
+    height: 60,
   },
   {
     name: "Yellow",
     logo: "/images/brands/yellow.png",
+    width: 120,
+    height: 60,
   },
 ];
 
@@ -58,13 +72,15 @@ const Brands = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center aspect-[4/3]"
+              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center"
             >
               <img
                 src={brand.logo}
                 alt={`Logo ${brand.name}`}
-                className="max-w-full max-h-full object-contain w-24 md:w-32"
+                width={brand.width}
+                height={brand.height}
                 loading="lazy"
+                className="w-auto h-auto max-w-full max-h-full object-contain"
               />
             </motion.div>
           ))}
@@ -75,4 +91,3 @@ const Brands = () => {
 };
 
 export default Brands;
-
