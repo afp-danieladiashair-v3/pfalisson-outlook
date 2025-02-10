@@ -1,3 +1,4 @@
+
 import { Instagram, Youtube, MessageCircle, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
@@ -58,7 +59,7 @@ const TopBar = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm shadow-md"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
