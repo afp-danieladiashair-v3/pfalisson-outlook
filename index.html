@@ -26,12 +26,16 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Lovable Script with data-token -->
+    <script>
+      window.__WS_TOKEN__ = true;
+    </script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" data-token="true" type="module"></script>
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- Lovable Script with data-token -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" data-token="true" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
