@@ -1,5 +1,5 @@
 
-import { Check, Sparkles, Clock, Heart } from "lucide-react";
+import { Sparkles, Check, Clock, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const benefits = [
