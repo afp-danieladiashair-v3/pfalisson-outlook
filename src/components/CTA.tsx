@@ -1,5 +1,5 @@
 
-import { MessageSquare, Sparkles } from "lucide-react";
+import { MessageSquare, Sparkles, CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 
@@ -22,14 +22,29 @@ const CTA = () => {
             <Sparkles className="w-12 h-12 text-primary" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-6">
-            Realize o Sonho do seu Cabelo Perfeito Hoje Mesmo!
+            Transforme Seu Visual Hoje Mesmo!
           </h2>
           <p className="text-lg text-neutral-600 mb-8">
-            Transforme seu visual com nossa equipe especializada. Agende agora e aproveite um atendimento personalizado que vai destacar sua beleza natural.
+            Agende agora e garanta um atendimento personalizado que vai destacar sua beleza natural
           </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <CheckCircle className="w-8 h-8 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Atendimento Premium</h3>
+              <p className="text-neutral-600">Experiência exclusiva e personalizada para cada cliente</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <CheckCircle className="w-8 h-8 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Resultados Garantidos</h3>
+              <p className="text-neutral-600">Satisfação garantida com nossos serviços especializados</p>
+            </div>
+          </div>
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            className="mb-8"
           >
             <Button
               size="lg"
@@ -37,17 +52,18 @@ const CTA = () => {
               onClick={() => window.open(whatsappUrl, "_blank")}
             >
               <MessageSquare className="mr-2" />
-              Agendar Consulta Gratuita
+              Agende sua Consulta Gratuita
             </Button>
           </motion.div>
-          <div className="mt-6 space-y-2">
+
+          <div className="space-y-2 text-center">
             <p className="text-sm text-neutral-600">
               ✨ Atendimento Personalizado de Terça a Sábado
             </p>
             <p className="text-sm text-neutral-600">
               ⏰ Horário Flexível das 8h às 19h
             </p>
-            <p className="text-sm font-medium text-primary">
+            <p className="text-sm font-medium text-primary animate-pulse">
               Vagas Limitadas - Garanta seu Horário!
             </p>
           </div>
