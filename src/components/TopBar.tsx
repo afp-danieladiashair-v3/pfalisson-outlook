@@ -23,13 +23,19 @@ const TopBar = () => {
           width="20"
           height="20"
           viewBox="0 0 24 24"
-          fill="none"
+          fill="url(#tiktok-gradient)"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
           className="w-5 h-5"
         >
+          <defs>
+            <linearGradient id="tiktok-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: "#69C9D0", stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: "#EE1D52", stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
           <path d="M9 12a4 4 0 1 0 4 4V4a9 9 0 0 1 9 9" />
         </svg>
       ),
