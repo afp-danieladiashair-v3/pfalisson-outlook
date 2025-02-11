@@ -12,7 +12,24 @@ const TopBar = () => {
 
   const socialLinks = [
     {
-      icon: <Instagram className="w-5 h-5 text-[#E4405F]" />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 102 102"
+          className="w-5 h-5"
+        >
+          <defs>
+            <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#8a3ab9" />
+              <stop offset="50%" stopColor="#e95950" />
+              <stop offset="100%" stopColor="#fccc63" />
+            </linearGradient>
+          </defs>
+          <rect width="102" height="102" fill="url(#instagram-gradient)" rx="25" />
+          <circle cx="51" cy="51" r="28" fill="none" stroke="#fff" strokeWidth="6" />
+          <circle cx="74" cy="28" r="6" fill="#fff" />
+        </svg>
+      ),
       url: "https://www.instagram.com/danieladias_hair",
       label: "Instagram",
     },
