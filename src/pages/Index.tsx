@@ -19,7 +19,7 @@ const LoadingSpinner = () => (
 const Index = () => {
   return (
     <LazyMotion features={domAnimation}>
-      <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#FDF4FF] via-[#F0ABFC] to-[#A21CAF]">
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-primary-50/10 to-white">
         <TopBar />
         <motion.main
           initial={{ opacity: 0 }}
@@ -28,32 +28,32 @@ const Index = () => {
           className="flex-1"
         >
           <Suspense fallback={<LoadingSpinner />}>
-            <div className="flex flex-col [&>*]:mt-0">
+            <div className="flex flex-col">
               <section id="home" className="scroll-mt-20">
                 <Hero />
               </section>
               
-              <section id="benefits" className="scroll-mt-20">
+              <section id="benefits" className="scroll-mt-20 bg-white/80">
                 <Benefits />
               </section>
               
-              <section id="services" className="scroll-mt-20">
+              <section id="services" className="scroll-mt-20 bg-primary-50/20">
                 <Pricing />
               </section>
               
-              <section id="testimonials" className="scroll-mt-20">
+              <section id="testimonials" className="scroll-mt-20 bg-white/80">
                 <Testimonials />
               </section>
               
-              <section id="brands" className="scroll-mt-20">
+              <section id="brands" className="scroll-mt-20 bg-primary-50/20">
                 <Brands />
               </section>
               
-              <section id="faq" className="scroll-mt-20">
+              <section id="faq" className="scroll-mt-20 bg-white/80">
                 <FAQ />
               </section>
               
-              <section>
+              <section className="bg-gradient-to-b from-primary-50/20 to-white">
                 <CTA />
               </section>
             </div>
