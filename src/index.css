@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,10 +10,6 @@ html {
 
 body {
   @apply antialiased text-neutral-800;
-}
-
-img {
-  @apply max-w-full h-auto;
 }
 
 @layer base {
@@ -38,28 +35,6 @@ img {
     --ring: 300 95% 60%;
     --radius: 0.5rem;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 300 95% 60%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 350 100% 94%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 340 80% 65%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
 }
 
 @layer base {
@@ -69,48 +44,12 @@ img {
   body {
     @apply bg-background text-foreground;
   }
-
-  /* Improved Typography */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
-  }
-
-  /* Improved Links */
-  a {
-    @apply transition-colors duration-200;
-  }
-
-  /* Better Focus States */
-  *:focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2;
-  }
-
-  /* Smooth Scrolling for Anchor Links */
-  html {
-    scroll-padding-top: 80px;
-  }
 }
 
-/* Loading State Improvements */
-.loading {
-  @apply animate-pulse bg-neutral-100;
+img {
+  @apply max-w-full h-auto;
 }
 
-/* Enhanced Mobile Experience */
-@media (max-width: 640px) {
-  .container {
-    @apply px-4;
-  }
-}
-
-/* Print Styles */
-@media print {
-  .no-print {
-    display: none !important;
-  }
-}
-
-/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
