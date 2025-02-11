@@ -20,23 +20,21 @@ const TopBar = () => {
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="url(#tiktok-gradient)"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          viewBox="0 0 38.51 38.51"
           className="w-5 h-5"
         >
           <defs>
             <linearGradient id="tiktok-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{ stopColor: "#69C9D0", stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: "#EE1D52", stopOpacity: 1 }} />
+              <stop offset="0%" stopColor="#69C9D0" />
+              <stop offset="100%" stopColor="#EE1D52" />
             </linearGradient>
           </defs>
-          <path d="M9 12a4 4 0 1 0 4 4V4a9 9 0 0 1 9 9" />
+          <rect width="38.51" height="38.51" fill="url(#tiktok-gradient)" rx="6.97" ry="6.97" />
+          <path
+            fill="#fff"
+            fillRule="evenodd"
+            d="M23.84,14.29c1.79,1.28,3.99,2.03,6.35,2.03v-3.59c-1.32-.28-2.49-.97-3.37-1.93-1.51-.94-2.59-2.49-2.91-4.31h-3.32v18.2c0,2.12-1.73,3.84-3.86,3.84-1.25,0-2.36-.6-3.07-1.52-1.26-.63-2.12-1.94-2.12-3.44,0-2.13,1.73-3.85,3.86-3.85.41,0,.8.06,1.17.18v-3.63c-4.57.09-8.25,3.83-8.25,8.42,0,2.29.92,4.37,2.4,5.89,1.34.9,2.96,1.42,4.69,1.42,4.65,0,8.43-3.77,8.43-8.42v-9.3Z"
+          />
         </svg>
       ),
       url: "https://www.tiktok.com/@danieladiashair",
