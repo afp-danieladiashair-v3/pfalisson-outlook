@@ -10,7 +10,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary-50/80 to-secondary/50">
-      <div className="absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-center opacity-20" />
+      <div className="absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-left-top bg-no-repeat opacity-20" />
       <div className="container mx-auto px-4 py-12 lg:py-20 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
