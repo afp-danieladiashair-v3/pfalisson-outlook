@@ -43,12 +43,12 @@ const TopBar = () => {
       label: "TikTok",
     },
     {
-      icon: <Youtube className="w-5 h-5" />,
+      icon: <Youtube className="w-5 h-5 text-[#FF0000]" />,
       url: "https://www.youtube.com/@DanielaDiasHair",
       label: "YouTube",
     },
     {
-      icon: <MessageCircle className="w-5 h-5" />,
+      icon: <MessageCircle className="w-5 h-5 text-[#25D366]" />,
       url: whatsappUrl,
       label: "WhatsApp",
     },
