@@ -12,7 +12,7 @@ const TopBar = () => {
 
   const socialLinks = [
     {
-      icon: <Instagram className="w-5 h-5" />,
+      icon: <Instagram className="w-5 h-5 text-[#E4405F]" />,
       url: "https://www.instagram.com/danieladias_hair",
       label: "Instagram",
     },
