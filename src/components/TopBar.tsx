@@ -13,7 +13,11 @@ const TopBar = () => {
   const socialLinks = [
     {
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102" viewBox="0 0 102 102" id="instagram">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 102 102"
+          className="w-5 h-5"
+          id="instagram"
+        >
           <defs>
             <radialGradient id="a" cx="6.601" cy="99.766" r="129.502" gradientUnits="userSpaceOnUse">
               <stop offset=".09" stop-color="#fa8f21"></stop>
