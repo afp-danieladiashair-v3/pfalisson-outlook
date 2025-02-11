@@ -28,7 +28,7 @@ const Index = () => {
           className="flex-1"
         >
           <Suspense fallback={<LoadingSpinner />}>
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-0">
               <section id="home" className="scroll-mt-20">
                 <Hero />
               </section>

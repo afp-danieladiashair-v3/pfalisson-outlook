@@ -72,19 +72,16 @@ const Brands = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center"
             >
-              <div className="img-container aspect-[2/1]">
-                <img
-                  src={brand.logo}
-                  alt={`Logo ${brand.name}`}
-                  width={brand.width}
-                  height={brand.height}
-                  loading="lazy"
-                  decoding="async"
-                  className="object-contain"
-                />
-              </div>
+              <img
+                src={brand.logo}
+                alt={`Logo ${brand.name}`}
+                width={brand.width}
+                height={brand.height}
+                loading="lazy"
+                className="w-auto h-auto max-w-full max-h-full object-contain"
+              />
             </motion.div>
           ))}
         </div>
