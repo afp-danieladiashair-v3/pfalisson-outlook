@@ -19,7 +19,7 @@ const LoadingSpinner = () => (
 const Index = () => {
   return (
     <LazyMotion features={domAnimation}>
-      <div className="min-h-screen flex flex-col bg-gradient-to-b from-primary-50/10 to-white">
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#FDF4FF] to-white">
         <TopBar />
         <motion.main
           initial={{ opacity: 0 }}
@@ -28,32 +28,32 @@ const Index = () => {
           className="flex-1"
         >
           <Suspense fallback={<LoadingSpinner />}>
-            <div className="flex flex-col">
-              <section id="home" className="scroll-mt-20">
+            <div className="flex flex-col [&>*]:mt-0">
+              <section id="home" className="scroll-mt-20 bg-gradient-to-b from-[#FDF4FF] to-[#FAE8FF]">
                 <Hero />
               </section>
               
-              <section id="benefits" className="scroll-mt-20 bg-white/80">
+              <section id="benefits" className="scroll-mt-20 bg-gradient-to-b from-[#FAE8FF] to-[#F5D0FE]">
                 <Benefits />
               </section>
               
-              <section id="services" className="scroll-mt-20 bg-primary-50/20">
+              <section id="services" className="scroll-mt-20 bg-gradient-to-b from-[#F5D0FE] to-[#F0ABFC]">
                 <Pricing />
               </section>
               
-              <section id="testimonials" className="scroll-mt-20 bg-white/80">
+              <section id="testimonials" className="scroll-mt-20 bg-gradient-to-b from-[#F0ABFC] to-[#E879F9]">
                 <Testimonials />
               </section>
               
-              <section id="brands" className="scroll-mt-20 bg-primary-50/20">
+              <section id="brands" className="scroll-mt-20 bg-gradient-to-b from-[#E879F9] to-[#D946EF]">
                 <Brands />
               </section>
               
-              <section id="faq" className="scroll-mt-20 bg-white/80">
+              <section id="faq" className="scroll-mt-20 bg-gradient-to-b from-[#D946EF] to-[#C026D3]">
                 <FAQ />
               </section>
               
-              <section className="bg-gradient-to-b from-primary-50/20 to-white">
+              <section className="bg-gradient-to-b from-[#C026D3] to-[#A21CAF]">
                 <CTA />
               </section>
             </div>
