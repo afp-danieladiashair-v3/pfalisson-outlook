@@ -1,10 +1,26 @@
 
 import { FC } from "react";
-import { Instagram, Youtube } from "lucide-react";
 
 const socialLinks = [
   {
-    icon: <Instagram className="w-5 h-5" />,
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-5 h-5"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+      </svg>
+    ),
     url: "https://www.instagram.com/danieladias_hair",
     label: "Instagram",
   },
@@ -17,12 +33,14 @@ const socialLinks = [
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
         className="w-5 h-5"
       >
-        <path d="M9 12a4 4 0 1 0 4 4V4a9 9 0 0 1 9 9" />
+        <path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5Z"/>
+        <path d="M10 12a3 3 0 1 1 3 3V4"/>
+        <path d="M16 8a4 4 0 0 1 4 4"/>
       </svg>
     ),
     url: "https://www.tiktok.com/@danieladiashair",
