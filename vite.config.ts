@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => ({
       '5a71e751-82c7-4d34-b019-ab3b40def8bf.lovableproject.com',
       'dbc9130e-a233-4a8a-b717-06af0ab18a06.lovableproject.com',
       '9368df2a-0caf-4fb5-b251-1851b55cc30a.lovableproject.com',
+      '3ad12e4c-f45f-4fa3-a8a8-09dd50d623c1.lovableproject.com',
     ],
   },
   plugins: [
