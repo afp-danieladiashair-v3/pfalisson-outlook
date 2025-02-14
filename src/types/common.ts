@@ -1,20 +1,20 @@
 
-import { LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react"
 
 export interface Keyword {
-  text: string;
-  icon: LucideIcon;
+  text: string
+  icon: LucideIcon
 }
 
 export interface Service {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  keywords: Keyword[];
+  title: string
+  description: string
+  icon: LucideIcon
+  keywords: Keyword[]
 }
 
 export interface SocialLink {
-  url: string;
-  icon: LucideIcon;
-  label: string;
+  url: string
+  icon: LucideIcon
+  label: string
 }

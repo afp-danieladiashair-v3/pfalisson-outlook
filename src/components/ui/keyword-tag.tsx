@@ -1,9 +1,9 @@
 
-import { Keyword } from "@/types/common";
+import { Keyword } from "@/types/common"
 
 interface KeywordTagProps {
-  keyword: Keyword;
-  className?: string; // Adicionando className como prop opcional
+  keyword: Keyword
+  className?: string
 }
 
 export const KeywordTag = ({ keyword, className }: KeywordTagProps) => (
@@ -11,4 +11,4 @@ export const KeywordTag = ({ keyword, className }: KeywordTagProps) => (
     <keyword.icon className="w-4 h-4" />
     <span className="text-sm">{keyword.text}</span>
   </div>
-);
+)

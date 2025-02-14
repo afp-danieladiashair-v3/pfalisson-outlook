@@ -1,6 +1,6 @@
 
-import { SocialLink } from "@/types/common";
-import { Instagram, Star, Youtube } from "lucide-react";
+import { SocialLink } from "@/types/common"
+import { Instagram, Star, Youtube, MessageCircle } from "lucide-react"
 
 export const socialLinks: SocialLink[] = [
   {
@@ -17,5 +17,10 @@ export const socialLinks: SocialLink[] = [
     url: "https://www.youtube.com/@DanielaDiasHair",
     icon: Youtube,
     label: "YouTube"
+  },
+  {
+    url: "https://wa.me/5534999659886",
+    icon: MessageCircle,
+    label: "WhatsApp"
   }
-];
+]
