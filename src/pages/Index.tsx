@@ -10,16 +10,18 @@ import Footer from "@/components/Footer"
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <Hero />
-      <Benefits />
-      <Services />
-      <Testimonials />
-      <Brands />
-      <FAQ />
+      <main className="flex-grow bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200">
+        <Hero />
+        <Benefits />
+        <Services />
+        <Testimonials />
+        <Brands />
+        <FAQ />
+      </main>
       <Footer />
-    </main>
+    </div>
   )
 }
 
