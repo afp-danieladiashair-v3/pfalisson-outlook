@@ -1,36 +1,71 @@
 
-import { MapPin, Star, Clock } from "lucide-react";
+import { MapPin, Star, Clock, Shield, Heart, Sparkles } from "lucide-react"
+
+const benefits = [
+  {
+    icon: Star,
+    title: "Expertise Comprovada",
+    description: "Mais de 1000 clientes satisfeitas com nossas transformações capilares"
+  },
+  {
+    icon: Shield,
+    title: "Resultados Garantidos",
+    description: "Satisfação garantida ou seu dinheiro de volta, sem burocracia"
+  },
+  {
+    icon: Heart,
+    title: "Atendimento Premium",
+    description: "Experiência personalizada com foco total em sua transformação"
+  },
+  {
+    icon: Clock,
+    title: "Agenda Flexível",
+    description: "Horários exclusivos que se adaptam à sua rotina"
+  },
+  {
+    icon: Sparkles,
+    title: "Produtos Premium",
+    description: "Utilizamos apenas as melhores marcas do mercado"
+  },
+  {
+    icon: MapPin,
+    title: "Ambiente Exclusivo",
+    description: "Espaço pensado para seu conforto e privacidade"
+  }
+]
 
 const Benefits = () => {
   return (
     <section className="section-padding bg-gradient-to-b from-white/80 to-primary-50/50">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-serif font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800">
-          Por que Escolher Nossa Expertise?
-        </h2>
-        <p className="text-center text-primary-500 mb-16 max-w-2xl mx-auto">
-          Combinamos arte, técnica e cuidado para oferecer uma experiência única em transformação capilar
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div className="glass-card p-8 text-center bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <MapPin className="w-14 h-14 text-primary-500 mx-auto mb-6" />
-            <h3 className="text-2xl font-semibold mb-4 text-primary-600">Ambiente Sofisticado</h3>
-            <p className="text-primary-500">Espaço pensado para seu conforto e bem-estar durante toda sua transformação</p>
-          </div>
-          <div className="glass-card p-8 text-center bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <Star className="w-14 h-14 text-primary-500 mx-auto mb-6" />
-            <h3 className="text-2xl font-semibold mb-4 text-primary-600">Equipe Especializada</h3>
-            <p className="text-primary-500">Profissionais altamente capacitados e em constante atualização</p>
-          </div>
-          <div className="glass-card p-8 text-center bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <Clock className="w-14 h-14 text-primary-500 mx-auto mb-6" />
-            <h3 className="text-2xl font-semibold mb-4 text-primary-600">Atendimento Premium</h3>
-            <p className="text-primary-500">Agendamento personalizado para dedicar atenção exclusiva à sua transformação</p>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl font-serif font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800">
+            Por Que Escolher Nossa Expertise?
+          </h2>
+          <p className="text-primary-500 text-lg">
+            Combinamos tecnologia, expertise e cuidado para oferecer a melhor experiência em transformação capilar do mercado
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {benefits.map((benefit, index) => (
+            <div 
+              key={index}
+              className="glass-card p-8 text-center bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <benefit.icon className="w-12 h-12 text-primary-500 mx-auto mb-6" />
+              <h3 className="text-xl font-semibold mb-4 text-primary-600">
+                {benefit.title}
+              </h3>
+              <p className="text-primary-500">
+                {benefit.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Benefits;
+export default Benefits
