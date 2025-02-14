@@ -1,89 +1,60 @@
 
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { Sparkles, Palette, Star, Heart } from "lucide-react";
+import { KeywordTag } from "./ui/keyword-tag";
+
+const heroKeywords = [
+  { text: "Expertise em Mechas", icon: Sparkles },
+  { text: "Coloração Profissional", icon: Palette },
+  { text: "Tratamentos Avançados", icon: Star },
+  { text: "Beleza Autêntica", icon: Heart }
+];
 
 const Hero = () => {
-  const whatsappNumber = "5534999659886";
-  const whatsappMessage = encodeURIComponent("Olá! Gostaria de transformar meu visual com a Daniela Dias Hair.");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary-50/80 to-secondary/50">
-      <div className="absolute inset-0 bg-[url('/hero-bg.png')] bg-cover bg-left-top bg-no-repeat opacity-20" />
-      <div className="container mx-auto px-4 py-12 lg:py-20 z-10 mt-12 md:mt-0">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto"
+    <section className="relative pt-40 pb-24 px-4">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/hero-bg.png"
+          alt="Background"
+          className="w-full h-full object-cover opacity-20 object-left-top"
+        />
+      </div>
+      <div className="container mx-auto text-center relative z-10">
+        <h1 className="text-5xl md:text-7xl font-serif font-bold text-primary-600 mb-8 animate-fadeIn bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800">
+          Transformação e Arte em Cada Fio
+        </h1>
+        <p className="text-xl md:text-2xl text-primary-500 mb-8 animate-slideUp max-w-2xl mx-auto font-light">
+          Descubra a <span className="font-semibold text-primary-600">excelência</span> em coloração e tratamentos capilares personalizados
+        </p>
+        <p className="text-lg md:text-xl text-primary-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+          Especialistas em técnicas exclusivas que transformam seu cabelo com respeito à sua natureza e personalidade
+        </p>
+        <div className="flex flex-wrap justify-center gap-6 mb-12">
+          {heroKeywords.map((keyword, index) => (
+            <KeywordTag key={index} keyword={keyword} />
+          ))}
+        </div>
+        <a
+          href="https://wa.me/5534999659886"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-primary-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-neutral-800 mb-6 leading-tight">
-            Realce Sua Beleza
-            <span className="text-5xl md:text-7xl text-primary block mt-2">
-              Daniela Dias Hair
-            </span>
-          </h1>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed"
+          Agende sua Transformação
+          <svg 
+            className="w-5 h-5" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
           >
-            <span className="text-2xl md:text-3xl font-semibold block mb-4">
-              Transforme Seu Visual com Nossa Expertise
-            </span>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-4">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="text-primary w-5 h-5" />
-                <span>Mechas Exclusivas</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="text-primary w-5 h-5" />
-                <span>Coloração Especial</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="text-primary w-5 h-5" />
-                <span>Tratamentos VIP</span>
-              </div>
-            </div>
-            <span className="text-primary font-medium block mt-4">
-              Resultados extraordinários que destacam sua beleza única
-            </span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="space-y-4"
-          >
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white font-semibold py-6 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              onClick={() => window.open(whatsappUrl, "_blank")}
-            >
-              Agende sua Transformação AGORA
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-6 text-sm text-neutral-600">
-              <span className="flex items-center gap-1">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                Atendimento VIP
-              </span>
-              <span className="flex items-center gap-1">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                Produtos Premium
-              </span>
-              <span className="flex items-center gap-1">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                Satisfação Garantida
-              </span>
-            </div>
-          </motion.div>
-        </motion.div>
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M17 8l4 4m0 0l-4 4m4-4H3" 
+            />
+          </svg>
+        </a>
       </div>
     </section>
   );

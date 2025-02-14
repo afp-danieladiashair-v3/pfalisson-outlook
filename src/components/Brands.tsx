@@ -1,92 +1,37 @@
 
-import { motion } from "framer-motion";
-
 const brands = [
-  {
-    name: "L'Oréal",
-    logo: "/images/brands/loreal.png",
-    width: 120,
-    height: 60,
-  },
-  {
-    name: "Sebastian",
-    logo: "/images/brands/sebastian.png",
-    width: 120,
-    height: 60,
-  },
-  {
-    name: "Wella",
-    logo: "/images/brands/wella.png",
-    width: 120,
-    height: 60,
-  },
-  {
-    name: "Igora",
-    logo: "/images/brands/igora.png",
-    width: 120,
-    height: 60,
-  },
-  {
-    name: "Burana",
-    logo: "/images/brands/burana.png",
-    width: 120,
-    height: 60,
-  },
-  {
-    name: "Zartte",
-    logo: "/images/brands/zartte.png",
-    width: 120,
-    height: 60,
-  },
-  {
-    name: "Yellow",
-    logo: "/images/brands/yellow.png",
-    width: 120,
-    height: 60,
-  },
+  { name: "Loreal", image: "/brands/loreal.png" },
+  { name: "Sebastian", image: "/brands/sebastian.png" },
+  { name: "Wella", image: "/brands/wella.png" },
+  { name: "Igora", image: "/brands/igora.png" },
+  { name: "Burana", image: "/brands/burana.png" },
+  { name: "Zartte", image: "/brands/zartte.png" },
+  { name: "Yellow", image: "/brands/yellow.png" }
 ];
 
 const Brands = () => {
   return (
-    <div className="py-20 bg-neutral-50">
-      <div className="container px-4 mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
-            Marcas Premium que Utilizamos
-          </h2>
-          <p className="text-lg text-neutral-600">
-            Trabalhamos apenas com as melhores marcas do mercado para garantir resultados excepcionais
-          </p>
-        </motion.div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6">
+    <section id="brands" className="section-padding bg-primary-50">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-serif font-bold text-center text-primary-800 mb-12">
+          Marcas Premium Selecionadas
+        </h2>
+        <p className="text-center text-primary-600 mb-12 max-w-2xl mx-auto">
+          Trabalhamos apenas com as melhores marcas do mercado para garantir resultados excepcionais
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
           {brands.map((brand, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-center"
-            >
+            <div key={index} className="glass-card p-6 text-center hover-effect">
               <img
-                src={brand.logo}
-                alt={`Logo ${brand.name}`}
-                width={brand.width}
-                height={brand.height}
-                loading="lazy"
-                className="w-auto h-auto max-w-full max-h-full object-contain"
+                src={brand.image}
+                alt={brand.name}
+                className="h-16 w-auto mx-auto object-contain"
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
