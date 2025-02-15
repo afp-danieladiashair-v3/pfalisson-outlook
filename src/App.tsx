@@ -25,7 +25,7 @@ function App() {
       const images = document.querySelectorAll('img[loading="lazy"]');
       if ('loading' in HTMLImageElement.prototype) {
         images.forEach(img => {
-          if (img.dataset.src) {
+          if (img instanceof HTMLImageElement && img.dataset.src) {
             img.src = img.dataset.src;
           }
         });
