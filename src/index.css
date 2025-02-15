@@ -1,60 +1,43 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-  -webkit-tap-highlight-color: transparent;
-}
-
-body {
-  @apply antialiased text-neutral-800;
-}
-
 @layer base {
-  :root {
-    --background: 340 80% 98%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 300 95% 60%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 350 100% 94%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 340 20% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 340 80% 65%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 300 95% 60%;
-    --radius: 0.5rem;
+  html {
+    scroll-behavior: smooth;
   }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply text-gray-900 bg-white font-['Inter'];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Playfair_Display'] font-light;
   }
 }
 
-img {
-  @apply max-w-full h-auto;
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
