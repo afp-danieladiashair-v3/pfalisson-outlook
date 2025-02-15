@@ -22,21 +22,52 @@ function App() {
   useEffect(() => {
     // Otimização de performance
     const preloadImages = () => {
-      const images = document.querySelectorAll('img[loading="lazy"]');
-      if ('loading' in HTMLImageElement.prototype) {
-        images.forEach(img => {
-          if (img instanceof HTMLImageElement && img.dataset.src) {
-            img.src = img.dataset.src;
-          }
-        });
+      try {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        if ('loading' in HTMLImageElement.prototype) {
+          images.forEach(img => {
+            if (img instanceof HTMLImageElement && img.dataset.src) {
+              img.src = img.dataset.src;
+            }
+          });
+        }
+      } catch (error) {
+        console.warn('Erro ao pré-carregar imagens:', error);
       }
     };
 
     // Detectar quando o navegador está ocioso para carregar recursos não críticos
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(preloadImages);
-    } else {
-      setTimeout(preloadImages, 1000);
+    try {
+      if ('requestIdleCallback' in window) {
+        const idleCallbackId = requestIdleCallback(preloadImages);
+        return () => cancelIdleCallback(idleCallbackId);
+      } else {
+        const timeoutId = setTimeout(preloadImages, 1000);
+        return () => clearTimeout(timeoutId);
+      }
+    } catch (error) {
+      console.warn('Erro ao configurar carregamento preguiçoso:', error);
+      preloadImages();
+    }
+  }, []);
+
+  // Prevenir modificações não autorizadas nas APIs do navegador
+  useEffect(() => {
+    const preventCredentialModification = () => {
+      try {
+        Object.defineProperty(window.navigator, 'credentials', {
+          get() {
+            return Object.freeze({ ...navigator.credentials });
+          },
+          configurable: false
+        });
+      } catch (error) {
+        console.warn('Não foi possível proteger as credenciais:', error);
+      }
+    };
+
+    if (process.env.NODE_ENV === 'production') {
+      preventCredentialModification();
     }
   }, []);
 
