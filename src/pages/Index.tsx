@@ -34,7 +34,7 @@ const Index = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="relative z-10"
+            className="relative z-10 mb-20"
           >
             <Hero />
           </motion.div>
@@ -44,7 +44,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative z-20"
+            className="relative z-20 py-16 md:py-24"
           >
             <Benefits />
           </motion.section>
@@ -54,7 +54,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative z-20"
+            className="relative z-20 py-16 md:py-24 bg-white/50"
           >
             <Services />
           </motion.section>
@@ -64,7 +64,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative z-20"
+            className="relative z-20 py-16 md:py-24"
           >
             <Testimonials />
           </motion.section>
@@ -74,7 +74,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative z-20"
+            className="relative z-20 py-16 md:py-24 bg-white/50"
           >
             <Brands />
           </motion.section>
@@ -84,7 +84,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative z-20"
+            className="relative z-20 py-16 md:py-24"
           >
             <FAQ />
           </motion.section>
