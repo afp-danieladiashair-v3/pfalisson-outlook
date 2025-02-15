@@ -1,10 +1,11 @@
+
 import { MapPin, Star, Clock } from "lucide-react";
 
 const Benefits = () => {
   return (
     <section className="section-padding bg-gradient-to-b from-white/80 to-[#FFDEE2]/50">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-serif font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800">
+        <h2 className="text-4xl font-serif font-bold text-center text-primary-600 mb-8">
           Por que Escolher Nossa Expertise?
         </h2>
         <p className="text-center text-primary-500 mb-16 max-w-2xl mx-auto">
