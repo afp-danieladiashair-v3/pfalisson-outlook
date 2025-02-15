@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -12,46 +13,22 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
+    --primary: 346 77% 49%;
+    --primary-foreground: 355 100% 97%;
+    --secondary: 0 0% 96%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
+    --accent: 346 77% 49%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --ring: 346 77% 49%;
+    --radius: 0.75rem;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
-}
-
-@layer base {
   * {
     @apply border-neutral-200;
   }
@@ -66,12 +43,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-  img {
-    @apply max-w-full h-auto object-cover;
-    @apply transition-opacity duration-300;
-    @apply hover:opacity-95;
-  }
 }
 
 @layer components {
@@ -85,32 +56,30 @@
   }
 
   .glass-card {
-    @apply bg-white/20 backdrop-blur-sm rounded-xl border border-white/30;
-    @apply transition-all duration-300;
-    @apply hover:shadow-lg hover:-translate-y-1;
+    @apply bg-white/95 backdrop-blur-sm rounded-xl border border-white/30;
+    @apply shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply hover:scale-[1.02] hover:-translate-y-1;
   }
 
   .button-primary {
-    @apply bg-primary text-primary-foreground;
+    @apply bg-primary text-white font-medium px-6 py-3 rounded-full;
     @apply hover:bg-primary/90 active:bg-primary/95;
-    @apply px-4 py-2 rounded-md;
     @apply transition-all duration-300;
     @apply transform hover:-translate-y-0.5;
+    @apply shadow-lg hover:shadow-xl;
     @apply focus:outline-none focus:ring-2 focus:ring-primary/50;
     @apply disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
-  .fade-in {
-    @apply animate-fadeIn;
+  .heading-primary {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold;
+    @apply bg-gradient-to-r from-primary to-primary-600 bg-clip-text text-transparent;
+    @apply mb-6 leading-tight;
   }
 
-  .slide-up {
-    @apply animate-slideUp;
-  }
-
-  .hover-scale {
-    @apply transition-transform duration-300;
-    @apply hover:scale-105;
+  .heading-secondary {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-primary-700;
+    @apply mb-4;
   }
 
   .section-heading {
@@ -132,26 +101,6 @@
 
   .flex-center {
     @apply flex items-center justify-center;
-  }
-
-  .responsive-padding {
-    @apply px-4 sm:px-6 lg:px-8;
-  }
-
-  .link-hover {
-    @apply transition-colors duration-300;
-    @apply hover:text-primary-600;
-  }
-
-  .nav-link {
-    @apply text-primary-600 hover:text-primary-700;
-    @apply font-medium transition-colors;
-    @apply relative after:content-[''];
-    @apply after:absolute after:bottom-0 after:left-0;
-    @apply after:w-full after:h-0.5;
-    @apply after:bg-primary-600 after:scale-x-0;
-    @apply after:transition-transform after:duration-300;
-    @apply hover:after:scale-x-100;
   }
 }
 

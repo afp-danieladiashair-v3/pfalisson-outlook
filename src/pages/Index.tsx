@@ -23,16 +23,18 @@ const Index = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-neutral-200/80"
         >
           <Navbar />
         </motion.header>
 
-        <main className="flex-grow bg-gradient-to-br from-[#FFDEE2] via-[#FFE4E6] to-[#FFF1F2]">
+        <main className="flex-grow bg-gradient-to-br from-[#FFF0F4] via-[#FFF4F6] to-[#FFF9FB]">
           <motion.div
             variants={fadeInUp}
             initial="initial"
             animate="animate"
             exit="exit"
+            className="relative z-10"
           >
             <Hero />
           </motion.div>
@@ -42,6 +44,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="relative z-20"
           >
             <Benefits />
           </motion.section>
@@ -51,6 +54,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="relative z-20"
           >
             <Services />
           </motion.section>
@@ -60,6 +64,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="relative z-20"
           >
             <Testimonials />
           </motion.section>
@@ -69,6 +74,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="relative z-20"
           >
             <Brands />
           </motion.section>
@@ -78,6 +84,7 @@ const Index = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="relative z-20"
           >
             <FAQ />
           </motion.section>
@@ -87,6 +94,7 @@ const Index = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
+          className="relative z-30 bg-white"
         >
           <Footer />
         </motion.footer>
