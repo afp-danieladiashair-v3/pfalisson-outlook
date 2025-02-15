@@ -1,60 +1,95 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-  -webkit-tap-highlight-color: transparent;
-}
-
-body {
-  @apply antialiased text-neutral-800;
-}
-
 @layer base {
-  :root {
-    --background: 340 80% 98%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 300 95% 60%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 350 100% 94%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 340 20% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 340 80% 65%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 300 95% 60%;
-    --radius: 0.5rem;
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-primary-50 text-gray-900 antialiased min-h-screen;
+  }
+
+  img {
+    @apply max-w-full h-auto;
   }
 }
 
-img {
-  @apply max-w-full h-auto;
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl shadow-lg transition-all duration-300;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 md:px-6 lg:px-8;
+  }
+
+  .hover-effect {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-full font-semibold 
+           hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .animate-fade-in {
+    @apply animate-[fadeIn_0.5s_ease-out];
+  }
+
+  .animate-slide-up {
+    @apply animate-[slideUp_0.5s_ease-out];
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@layer utilities {
+  .backdrop-saturate {
+    backdrop-filter: saturate(180%) blur(5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

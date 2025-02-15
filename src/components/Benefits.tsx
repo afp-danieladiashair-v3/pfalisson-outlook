@@ -1,83 +1,31 @@
-
-import { Sparkles, Check, Clock, Heart, Star, Shield, Scissors } from "lucide-react";
-import { motion } from "framer-motion";
-
-const benefits = [
-  {
-    icon: <Sparkles className="w-8 h-8 text-primary" />,
-    title: "Expertise Profissional",
-    description: "Equipe especializada com anos de experiência em transformações capilares",
-  },
-  {
-    icon: <Shield className="w-8 h-8 text-primary" />,
-    title: "Produtos Premium",
-    description: "Marcas renomadas e produtos de alta qualidade para resultados excepcionais",
-  },
-  {
-    icon: <Clock className="w-8 h-8 text-primary" />,
-    title: "Horários Flexíveis",
-    description: "Agendamento conveniente, incluindo horários estendidos e aos sábados",
-  },
-  {
-    icon: <Star className="w-8 h-8 text-primary" />,
-    title: "Resultados Garantidos",
-    description: "Satisfação garantida com transformações que realçam sua beleza natural",
-  },
-  {
-    icon: <Heart className="w-8 h-8 text-primary" />,
-    title: "Ambiente Acolhedor",
-    description: "Espaço confortável e acolhedor para sua transformação",
-  },
-  {
-    icon: <Scissors className="w-8 h-8 text-primary" />,
-    title: "Técnicas Modernas",
-    description: "Últimas tendências e técnicas inovadoras em coloração e tratamentos",
-  },
-];
+import { MapPin, Star, Clock } from "lucide-react";
 
 const Benefits = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-primary-50/20">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm mb-4">
-            Nossos Diferenciais
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
-            Por que escolher a Daniela Dias Hair?
-          </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Descubra como nosso compromisso com a excelência faz a diferença
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
-            >
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                {benefit.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-neutral-800 mb-3">
-                {benefit.title}
-              </h3>
-              <p className="text-neutral-600 leading-relaxed">
-                {benefit.description}
-              </p>
-            </motion.div>
-          ))}
+    <section className="section-padding bg-gradient-to-b from-white/80 to-[#FFDEE2]/50">
+      <div className="container mx-auto">
+        <h2 className="text-4xl font-serif font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-800">
+          Por que Escolher Nossa Expertise?
+        </h2>
+        <p className="text-center text-primary-500 mb-16 max-w-2xl mx-auto">
+          Combinamos arte, técnica e cuidado para oferecer uma experiência única em transformação capilar
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="glass-card p-8 text-center bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <MapPin className="w-14 h-14 text-primary-500 mx-auto mb-6" />
+            <h3 className="text-2xl font-semibold mb-4 text-primary-600">Ambiente Sofisticado</h3>
+            <p className="text-primary-500">Espaço pensado para seu conforto e bem-estar durante toda sua transformação</p>
+          </div>
+          <div className="glass-card p-8 text-center bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <Star className="w-14 h-14 text-primary-500 mx-auto mb-6" />
+            <h3 className="text-2xl font-semibold mb-4 text-primary-600">Equipe Especializada</h3>
+            <p className="text-primary-500">Profissionais altamente capacitados e em constante atualização</p>
+          </div>
+          <div className="glass-card p-8 text-center bg-white/60 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <Clock className="w-14 h-14 text-primary-500 mx-auto mb-6" />
+            <h3 className="text-2xl font-semibold mb-4 text-primary-600">Atendimento Premium</h3>
+            <p className="text-primary-500">Agendamento personalizado para dedicar atenção exclusiva à sua transformação</p>
+          </div>
         </div>
       </div>
     </section>
