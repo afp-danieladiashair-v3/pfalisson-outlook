@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -31,17 +30,8 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handlePrevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const handleNextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
-  };
-
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Slider */}
       <AnimatePresence mode="wait">
         {images.map((image, index) => (
           currentImage === index && (
@@ -54,7 +44,7 @@ const Hero = () => {
               transition={{ duration: 0.7 }}
             >
               <div 
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0 bg-cover bg-top"
                 style={{ backgroundImage: `url(${image.url})` }}
               />
               <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
@@ -63,85 +53,63 @@ const Hero = () => {
         ))}
       </AnimatePresence>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-white text-center px-4">
-        <motion.p 
-          className="text-sm uppercase tracking-wider mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Bem-vinda ao
-        </motion.p>
-
-        <motion.h1 
-          className="font-serif text-5xl md:text-7xl mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Daniela Dias Hair
-        </motion.h1>
-
-        <AnimatePresence mode="wait">
-          <motion.p
-            key={currentImage}
-            className="text-2xl md:text-3xl font-serif mb-8 max-w-2xl"
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="flex-1 flex flex-col items-center justify-center text-white text-center px-4">
+          <motion.p 
+            className="text-sm uppercase tracking-wider mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
-            {images[currentImage].title}
-            <span className="block text-xl md:text-2xl mt-2 text-white/80">
-              {images[currentImage].subtitle}
-            </span>
+            Bem-vinda
           </motion.p>
-        </AnimatePresence>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="space-y-4"
-        >
-          <a
-            href="https://wa.me/5534999659886"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-3 bg-white text-black hover:bg-primary-600 hover:text-white 
-                     transition-all duration-300 rounded-full group"
+          <motion.h1 
+            className="font-serif text-5xl md:text-7xl mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Agende seu horário
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
-        </motion.div>
+            Daniela Dias Hair
+          </motion.h1>
+
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={currentImage}
+              className="text-2xl md:text-3xl font-serif mb-8 max-w-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              {images[currentImage].title}
+              <span className="block text-xl md:text-2xl mt-2 text-white/80">
+                {images[currentImage].subtitle}
+              </span>
+            </motion.p>
+          </AnimatePresence>
+        </div>
+
+        <div className="flex flex-col items-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <a
+              href="https://wa.me/5534999659886"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-3 bg-white/10 text-white hover:bg-primary-600 
+                       transition-all duration-300 rounded-full group backdrop-blur-sm"
+            >
+              Agende seu horário
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={handlePrevImage}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white p-2 hover:bg-white/10 rounded-full
-                 transition-colors duration-200"
-        aria-label="Imagem anterior"
-      >
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <button
-        onClick={handleNextImage}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white p-2 hover:bg-white/10 rounded-full
-                 transition-colors duration-200"
-        aria-label="Próxima imagem"
-      >
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Indicators */}
       <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center gap-2">
         {images.map((_, index) => (
           <button

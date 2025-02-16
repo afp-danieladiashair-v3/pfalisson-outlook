@@ -1,5 +1,7 @@
 
-import { motion } from "framer-motion";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, X } from 'lucide-react';
 
 const galleryImages = [
   {
@@ -35,12 +37,14 @@ const galleryImages = [
 ];
 
 const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section id="gallery" className="section-padding">
       <div className="container-custom">
         <div className="text-center mb-12">
           <motion.h2 
-            className="heading-2 text-primary-800 mb-4"
+            className="heading-2 text-black mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -48,7 +52,7 @@ const Gallery = () => {
             Galeria de Transformações
           </motion.h2>
           <motion.p 
-            className="body-large text-primary-600 max-w-2xl mx-auto"
+            className="body-large text-black max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -62,16 +66,17 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
-              className="relative group overflow-hidden rounded-xl"
+              className="relative group overflow-hidden rounded-xl cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              onClick={() => setSelectedImage(image.src)}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-80 object-cover object-top transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -94,12 +99,33 @@ const Gallery = () => {
             href="https://www.instagram.com/danieladias_hair"
             target="_blank"
             rel="noopener noreferrer"
-            className="button-primary"
+            className="inline-flex items-center px-8 py-3 bg-[rgb(244,235,255)] text-black hover:bg-primary-600 hover:text-white 
+                     transition-all duration-300 rounded-full group"
           >
             Ver Mais no Instagram
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
         </motion.div>
       </div>
+
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-4 right-4 text-white hover:text-primary-600 transition-colors"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X size={32} />
+          </button>
+          <img
+            src={selectedImage}
+            alt="Expanded view"
+            className="max-w-full max-h-[90vh] object-contain"
+          />
+        </div>
+      )}
     </section>
   );
 };

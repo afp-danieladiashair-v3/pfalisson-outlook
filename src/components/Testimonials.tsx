@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -25,11 +25,11 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="section-padding bg-primary-50">
+    <section id="testimonials" className="section-padding bg-white">
       <div className="container-custom">
         <div className="text-center mb-12">
           <motion.h2 
-            className="heading-2 text-primary-800 mb-4"
+            className="heading-2 text-black mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -37,7 +37,7 @@ const Testimonials = () => {
             O Que Nossas Clientes Dizem
           </motion.h2>
           <motion.p 
-            className="body-large text-primary-600 max-w-2xl mx-auto"
+            className="body-large text-black max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -88,9 +88,11 @@ const Testimonials = () => {
             href="https://www.instagram.com/danieladias_hair"
             target="_blank"
             rel="noopener noreferrer"
-            className="button-secondary"
+            className="inline-flex items-center px-8 py-3 bg-[rgb(244,235,255)] text-black hover:bg-primary-600 hover:text-white 
+                     transition-all duration-300 rounded-full group"
           >
             Ver Mais Depoimentos no Instagram
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
         </motion.div>
       </div>

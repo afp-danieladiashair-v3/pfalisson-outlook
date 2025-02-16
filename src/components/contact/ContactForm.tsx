@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useToast } from "@/hooks/use-toast";
 import { createWhatsAppLink, formatWhatsAppMessage } from '@/utils/whatsapp';
@@ -59,7 +58,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-sm">
+    <div className="bg-[rgb(249,250,251)] p-8 rounded-lg shadow-sm">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
@@ -143,19 +142,14 @@ const ContactForm = () => {
           />
         </motion.div>
 
-        <motion.button 
+        <button 
           type="submit" 
-          className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-[rgb(244,235,255)] text-black hover:bg-primary-600 hover:text-white 
+                 transition-all duration-300 rounded-full py-3 px-6 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={loading}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.4 }}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
         >
           {loading ? 'Enviando...' : 'Enviar Mensagem'}
-        </motion.button>
+        </button>
       </form>
     </div>
   );

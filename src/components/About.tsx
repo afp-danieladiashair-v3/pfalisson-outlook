@@ -1,5 +1,4 @@
-
-import { Star, Award, Users, Heart, Trophy, Clock } from 'lucide-react';
+import { Star, Award, Users, Heart, Trophy, Clock, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const About = () => {
@@ -82,9 +81,11 @@ const About = () => {
                 href="https://www.instagram.com/danieladias_hair"
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="btn-primary inline-flex items-center"
+                className="inline-flex items-center px-8 py-3 bg-[rgb(244,235,255)] text-black hover:bg-primary-600 hover:text-white 
+               transition-all duration-300 rounded-full group"
               >
                 Conheça Nosso Trabalho
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </motion.div>
           </div>

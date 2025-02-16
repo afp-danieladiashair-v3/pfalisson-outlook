@@ -1,11 +1,10 @@
-
 import { motion } from 'framer-motion';
 import ContactForm from './contact/ContactForm';
 import ContactInfo from './contact/ContactInfo';
 
 const Contact = () => {
   return (
-    <section id="contato" className="section-padding bg-gray-50">
+    <section id="contato" className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"

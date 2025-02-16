@@ -7,7 +7,7 @@ import SocialLinks from './SocialLinks';
 const ContactInfo = () => {
   return (
     <div className="space-y-8">
-      <div className="bg-white p-8 rounded-lg shadow-sm">
+      <div className="bg-[rgb(249,250,251)] p-8 rounded-lg shadow-sm">
         <motion.h3 
           className="text-2xl mb-6"
           initial={{ opacity: 0, y: 20 }}
