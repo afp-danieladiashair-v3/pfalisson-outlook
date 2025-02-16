@@ -26,40 +26,60 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#9b87f5",
-          dark: "#7E69AB",
-          light: "#E5DEFF",
+          50: "#F9F5FF",
+          100: "#F4EBFF",
+          200: "#E9D7FE",
+          300: "#D8B4FE",
+          400: "#C084FC",
+          500: "#A855F7",
+          600: "#9333EA",
+          700: "#7E22CE",
+          800: "#6B21A8",
+          900: "#581C87",
+          950: "#3B0764",
         },
-        secondary: {
-          DEFAULT: "#8E9196",
-          dark: "#6c7075",
-          light: "#F1F1F1",
+        neutral: {
+          50: "#FAFAFA",
+          100: "#F5F5F5",
+          200: "#E5E5E5",
+          300: "#D4D4D4",
+          400: "#A3A3A3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+          950: "#0A0A0A",
         },
-        accent: {
-          DEFAULT: "#D946EF",
-          dark: "#be35d1",
-        },
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
       },
       keyframes: {
-        "fade-up": {
-          "0%": { 
-            opacity: "0",
-            transform: "translateY(20px)"
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)"
-          }
-        },
-        "fade-in": {
+        fadeIn: {
           "0%": { opacity: "0" },
-          "100%": { opacity: "1" }
-        }
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        slideDown: {
+          "0%": { transform: "translateY(-20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        scaleIn: {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
       },
       animation: {
-        "fade-up": "fade-up 0.5s ease-out",
-        "fade-in": "fade-in 0.3s ease-out",
-      }
+        fadeIn: "fadeIn 0.5s ease-out",
+        slideUp: "slideUp 0.5s ease-out",
+        slideDown: "slideDown 0.5s ease-out",
+        scaleIn: "scaleIn 0.3s ease-out",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
