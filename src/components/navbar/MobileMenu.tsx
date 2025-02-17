@@ -13,19 +13,19 @@ interface MobileMenuProps {
 const MobileMenu = ({ isOpen, activeSection, navigation, onNavigate }: MobileMenuProps) => {
   return (
     <div 
-      className={`md:hidden transition-all duration-300 ${
+      className={`md:hidden fixed top-16 left-0 right-0 transition-all duration-300 ${
         isOpen 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 -translate-y-4 pointer-events-none'
       }`}
     >
-      <div className="bg-white/95 backdrop-blur-sm">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <div className="bg-white/95 backdrop-blur-sm shadow-lg">
+        <div className="py-2">
           {navigation.map((section) => (
             <button
               key={section.name}
               onClick={() => onNavigate(section.href)}
-              className={`block w-full text-left px-3 py-2 hover:text-primary transition-colors ${
+              className={`block w-full text-left px-6 py-2 hover:text-primary transition-colors ${
                 activeSection === section.href.substring(1) ? 'text-primary' : 'text-gray-900'
               }`}
             >
@@ -33,12 +33,12 @@ const MobileMenu = ({ isOpen, activeSection, navigation, onNavigate }: MobileMen
             </button>
           ))}
         </div>
-        <div className="px-5 pb-3 flex space-x-4">
+        <div className="px-6 py-3 border-t border-gray-100 flex justify-center space-x-6">
           <motion.a 
             href={SOCIAL_LINKS.INSTAGRAM} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="hover-lift"
+            className="hover-lift text-gray-600 hover:text-primary"
             whileHover={{ scale: 1.1 }}
           >
             <Instagram size={20} />
@@ -47,7 +47,7 @@ const MobileMenu = ({ isOpen, activeSection, navigation, onNavigate }: MobileMen
             href={SOCIAL_LINKS.TIKTOK} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover-lift"
+            className="hover-lift text-gray-600 hover:text-primary"
             whileHover={{ scale: 1.1 }}
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -58,7 +58,7 @@ const MobileMenu = ({ isOpen, activeSection, navigation, onNavigate }: MobileMen
             href={SOCIAL_LINKS.YOUTUBE} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover-lift"
+            className="hover-lift text-gray-600 hover:text-primary"
             whileHover={{ scale: 1.1 }}
           >
             <Youtube size={20} />
@@ -67,7 +67,7 @@ const MobileMenu = ({ isOpen, activeSection, navigation, onNavigate }: MobileMen
             href={SOCIAL_LINKS.WHATSAPP} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hover-lift"
+            className="hover-lift text-gray-600 hover:text-primary"
             whileHover={{ scale: 1.1 }}
           >
             <MessageSquare size={20} />

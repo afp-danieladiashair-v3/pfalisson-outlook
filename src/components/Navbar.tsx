@@ -27,7 +27,6 @@ const Navbar = () => {
       setIsAtTop(isTop);
       setIsScrolled(window.scrollY > 0);
 
-      // Detectar seção ativa
       const sections = navigation.map(item => item.href.substring(1));
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -49,30 +48,34 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    // Remove o # do início do href se estiver presente
     const cleanSectionId = sectionId.replace('#', '');
-    const element = document.getElementById(cleanSectionId);
     
-    if (element) {
-      const offset = 80; // Altura do header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
+    if (cleanSectionId === 'inicio') {
       window.scrollTo({
-        top: offsetPosition,
+        top: 0,
         behavior: 'smooth'
       });
+    } else {
+      const element = document.getElementById(cleanSectionId);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-      setIsOpen(false);
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
+
+    setIsOpen(false);
   };
 
-  const navClasses = `fixed w-full z-50 transition-all duration-300 ${
-    isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
-  }`;
-
   return (
-    <nav className={navClasses}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Logo isAtTop={isAtTop} isScrolled={isScrolled} />
@@ -85,11 +88,10 @@ const Navbar = () => {
             onNavigate={scrollToSection}
           />
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`interactive-element inline-flex items-center justify-center p-2 rounded-md transition-colors ${
+              className={`inline-flex items-center justify-center p-2 rounded-md transition-colors ${
                 isAtTop && !isScrolled ? 'text-white hover:text-white/80' : 'hover:text-primary'
               }`}
               aria-expanded={isOpen}

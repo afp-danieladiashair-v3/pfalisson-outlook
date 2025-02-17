@@ -1,5 +1,45 @@
+
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Scissors, Palette, Sparkles, Crown, Droplet, Wind, ShieldCheck, ArrowRight } from 'lucide-react';
+import ServiceLightbox from './ServiceLightbox';
+
+const serviceDetails = {
+  "Mechas": [
+    { name: "LOIRAS", description: "Técnica especializada para alcançar o loiro dos seus sonhos, com procedimentos que mantêm a saúde dos fios." },
+    { name: "MORENA ILUMINADA", description: "Iluminação sutil e natural que realça a beleza do cabelo escuro, criando dimensão e movimento." },
+    { name: "MOCHA MOUSSE", description: "Técnica exclusiva que combina tons quentes e frios, criando um visual moderno e sofisticado." },
+    { name: "COLORIDOS", description: "Mechas coloridas personalizadas, desde tons pastéis até cores vibrantes, sempre respeitando a saúde do cabelo." }
+  ],
+  "Coloração": [
+    { name: "COBERTURA DE BRANCOS", description: "Técnica especial para cobrir os fios brancos de forma natural, mantendo um resultado duradouro." },
+    { name: "COLORAÇÃO EM GERAL", description: "Diversas opções de coloração, desde as mais naturais até as mais ousadas, sempre com produtos de alta qualidade." }
+  ],
+  "Ruivo": [
+    { name: "APLICAÇÃO", description: "Técnica especializada para criar ruivos vibrantes e duradouros, desde os mais naturais até os mais intensos." },
+    { name: "CORREÇÃO DE COR", description: "Correção profissional para ajustar tons e uniformizar a cor, garantindo o ruivo perfeito." },
+    { name: "MANUTENÇÃO", description: "Cuidados específicos para manter a vivacidade e durabilidade da cor ruiva." }
+  ],
+  "Alisamento": [
+    { name: "BOTOX", description: "Tratamento que reduz o volume e recupera a saúde dos fios, proporcionando brilho e maciez." },
+    { name: "SELAGEM", description: "Tratamento que sela as cutículas, reduzindo o frizz e proporcionando um liso natural." },
+    { name: "PROGRESSIVA", description: "Alisamento duradouro que elimina o frizz e facilita a manutenção diária dos fios." }
+  ],
+  "Tratamentos": [
+    { name: "TRATAMENTO SIMPLES", description: "Tratamento básico para hidratar e nutrir os fios, devolvendo brilho e maciez ao cabelo." },
+    { name: "TERAPIA CAPILAR", description: "Tratamento intensivo personalizado que combate problemas específicos do couro cabeludo e fios." },
+    { name: "TRATAMENTO LOREAL PARA RETIRADA DE METAIS", description: "Procedimento especializado que remove resíduos metálicos dos fios, preparando o cabelo para outros procedimentos químicos." }
+  ],
+  "Finalização": [
+    { name: "ESCOVA E PRANCHA", description: "Técnica que combina escova e prancha para um liso perfeito e duradouro." },
+    { name: "ESCOVA E BABYLISS", description: "Combinação que cria ondas e movimento naturais, ideal para ocasiões especiais." },
+    { name: "ESCOVA INTELIGENTE", description: "Técnica exclusiva que reduz o tempo de secagem e mantém o penteado por mais tempo." }
+  ],
+  "Corte com Visagismo": [
+    { name: "CORTE SIMPLES", description: "Corte básico que valoriza o formato do rosto e o tipo de cabelo." },
+    { name: "CORTE COM VISAGISMO", description: "Análise completa das características faciais para criar um corte personalizado que realça sua beleza natural." }
+  ]
+};
 
 const services = [
   {
@@ -49,6 +89,8 @@ const cardVariants = {
 };
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
   return (
     <section id="servicos" className="section-padding bg-secondary-light">
       <div className="container mx-auto px-4">
@@ -76,6 +118,7 @@ const Services = () => {
               viewport={{ once: true }}
               custom={index}
               whileHover={{ scale: 1.05 }}
+              onClick={() => setSelectedService(service.title)}
               className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
             >
               <div className="text-primary mb-4 group-hover:scale-110 transition-transform">
@@ -104,6 +147,15 @@ const Services = () => {
           </a>
         </motion.div>
       </div>
+
+      {selectedService && (
+        <ServiceLightbox
+          isOpen={true}
+          onClose={() => setSelectedService(null)}
+          title={selectedService}
+          subservices={serviceDetails[selectedService as keyof typeof serviceDetails] || []}
+        />
+      )}
     </section>
   );
 };

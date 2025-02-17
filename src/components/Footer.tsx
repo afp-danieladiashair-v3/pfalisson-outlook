@@ -9,6 +9,29 @@ const Footer = () => {
     transition: { type: "spring", stiffness: 400, damping: 17 }
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const cleanSectionId = sectionId;
+    
+    if (cleanSectionId === 'inicio') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      const element = document.getElementById(cleanSectionId);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   return (
     <footer className="bg-secondary-light py-12">
       <div className="container mx-auto px-4">
@@ -57,28 +80,15 @@ const Footer = () => {
                 { name: 'Depoimentos', href: 'testimonials' },
                 { name: 'Contato', href: 'contato' }
               ].map((link) => (
-                <motion.a
+                <motion.button
                   key={link.name}
-                  href={`#${link.href}`}
-                  className="block text-secondary hover:text-primary transition-colors"
+                  onClick={() => scrollToSection(link.href)}
+                  className="block w-full text-secondary hover:text-primary transition-colors"
                   whileHover={hoverAnimation}
                   whileTap={{ scale: 0.95 }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const element = document.getElementById(link.href);
-                    if (element) {
-                      const offset = 80;
-                      const elementPosition = element.getBoundingClientRect().top;
-                      const offsetPosition = elementPosition + window.pageYOffset - offset;
-                      window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                      });
-                    }
-                  }}
                 >
                   {link.name}
-                </motion.a>
+                </motion.button>
               ))}
             </div>
           </motion.div>

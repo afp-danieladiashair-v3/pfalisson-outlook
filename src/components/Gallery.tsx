@@ -30,7 +30,7 @@ const galleryImages = [
     category: "Mechas"
   },
   {
-    src: "/gallery/tratamento1.jpg",
+    src: "/gallery/tratamento2.jpg",
     alt: "Tratamento Capilar",
     category: "Tratamentos"
   }

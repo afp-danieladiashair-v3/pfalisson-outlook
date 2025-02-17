@@ -34,7 +34,7 @@ const CookieConsent = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={handleAccept}
-                className="text-sm bg-primary text-gray-600 px-4 py-1.5 rounded-full hover:bg-primary-dark transition-colors"
+                className="text-sm bg-[rgb(249,250,251)] text-gray-600 px-4 py-1.5 rounded-full hover:bg-gray-100 transition-colors"
               >
                 Aceitar
               </button>
